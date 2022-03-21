@@ -1,6 +1,6 @@
-import gql from "@apollo/client";
+import gql from "graphql-tag";
 
-// export GET_ME that contain me info dependencies
+// export GET_ME that contain get me info dependencies
 export const GET_ME = gql`
   {
     me {
