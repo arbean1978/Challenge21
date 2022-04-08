@@ -2,7 +2,7 @@ const { AuthenticationError } = require("apollo-server-errors");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 
-// set the queries for me and data errors
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -18,9 +18,8 @@ const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      // checking if user exists with email and credentials
+  
       if (!user) {
-        //   if not throw an error
         throw new AuthenticationError("Invalid credentials");
       }
 
